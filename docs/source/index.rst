@@ -78,15 +78,14 @@ Sign in an existing user.
             "code": "0",
             "message": "User logged",
             "data": {
-              "id": 2,
-              "uuid": "f6097d39-a859-49f6-89c5-856d49357e3f",
-              "name": "tommaso",
-              "email": "galatitommaso@tiscali.it",
-              "password": "test",
-              "carPositionLong": 0.0,
-              "carPositionLat": 0.0,
-              "favStreetList": [],
-              "notification": null
+              "userData": {
+                "id": 1,
+                "name": "tommgalati",
+                "email": "tommasogalati01@gmail.com",
+                "carPositionLat": 12.45678,
+                "carPositionLong": 34.56884,
+                "notification": "{}"
+              }
             }
           }
         }
