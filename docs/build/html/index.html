@@ -1,0 +1,714 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Florence Clean Roads Docs &mdash; florence-clean-roads 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="florence-clean-roads 1.0 documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> florence-clean-roads
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Florence Clean Roads Docs</a><ul>
+<li><a class="reference internal" href="#user-api">User API</a><ul>
+<li><a class="reference internal" href="#registration">Registration</a></li>
+<li><a class="reference internal" href="#login">Login</a></li>
+<li><a class="reference internal" href="#favorite-streets">Favorite Streets</a><ul>
+<li><a class="reference internal" href="#add-street-to-favorites">Add street to favorites</a></li>
+<li><a class="reference internal" href="#favorite-streets-list">Favorite streets list</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notifications">Notifications</a><ul>
+<li><a class="reference internal" href="#save-notification-settings">Save notification settings</a></li>
+<li><a class="reference internal" href="#get-notification-settings">Get notification settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#last-park">Last Park</a><ul>
+<li><a class="reference internal" href="#set-last-park">Set last park</a></li>
+<li><a class="reference internal" href="#get-last-park">Get last park</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#city-api">City API</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">florence-clean-roads</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Florence Clean Roads Docs</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="florence-clean-roads-docs">
+<h1><a class="toc-backref" href="#id1">Florence Clean Roads Docs</a><a class="headerlink" href="#florence-clean-roads-docs" title="Permalink to this headline">¶</a></h1>
+<p>This API are developed to allow the comunication between the Android App <em>Florence Clean Roads</em> and his contextual server-side application.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#florence-clean-roads-docs" id="id1">Florence Clean Roads Docs</a><ul>
+<li><a class="reference internal" href="#user-api" id="id2">User API</a><ul>
+<li><a class="reference internal" href="#registration" id="id3">Registration</a></li>
+<li><a class="reference internal" href="#login" id="id4">Login</a></li>
+<li><a class="reference internal" href="#favorite-streets" id="id5">Favorite Streets</a><ul>
+<li><a class="reference internal" href="#add-street-to-favorites" id="id6">Add street to favorites</a></li>
+<li><a class="reference internal" href="#favorite-streets-list" id="id7">Favorite streets list</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notifications" id="id8">Notifications</a><ul>
+<li><a class="reference internal" href="#save-notification-settings" id="id9">Save notification settings</a></li>
+<li><a class="reference internal" href="#get-notification-settings" id="id10">Get notification settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#last-park" id="id11">Last Park</a><ul>
+<li><a class="reference internal" href="#set-last-park" id="id12">Set last park</a></li>
+<li><a class="reference internal" href="#get-last-park" id="id13">Get last park</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#city-api" id="id14">City API</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="user-api">
+<h2><a class="toc-backref" href="#id2">User API</a><a class="headerlink" href="#user-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="registration">
+<h3><a class="toc-backref" href="#id3">Registration</a><a class="headerlink" href="#registration" title="Permalink to this headline">¶</a></h3>
+<p>Sign up a new user.</p>
+<dl class="post">
+<dt id="post--addUser">
+<code class="descname">POST </code><code class="descname">/addUser</code><a class="headerlink" href="#post--addUser" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/addUser</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">https://florence-clean-roads.herokuapp.com/</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json, text/javascript</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+  <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;User inserted&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="kc">null</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>email</strong> &#8211; user email</li>
+<li><strong>password</strong> &#8211; md5 encoded password</li>
+<li><strong>name</strong> &#8211; user nicename</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; <p>Response OK, check json &#8220;response.code&#8221; value</p>
+<dl class="docutils">
+<dt>If 0:</dt>
+<dd>response ok</dd>
+<dt>If 1:</dt>
+<dd>there&#8217;s a problem</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="login">
+<h3><a class="toc-backref" href="#id4">Login</a><a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h3>
+<p>Sign in an existing user.</p>
+<dl class="post">
+<dt id="post--login">
+<code class="descname">POST </code><code class="descname">/login</code><a class="headerlink" href="#post--login" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/addUser</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">https://florence-clean-roads.herokuapp.com/</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json, text/javascript</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+  <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;User logged&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&quot;uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;f6097d39-a859-49f6-89c5-856d49357e3f&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;tommaso&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;galatitommaso@tiscali.it&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;carPositionLong&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+      <span class="nt">&quot;carPositionLat&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
+      <span class="nt">&quot;favStreetList&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="nt">&quot;notification&quot;</span><span class="p">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>email</strong> &#8211; user email</li>
+<li><strong>password</strong> &#8211; md5 encoded password</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; <p>Response OK, check json &#8220;response.code&#8221; value</p>
+<dl class="docutils">
+<dt>If 0:</dt>
+<dd>response ok</dd>
+<dt>If 1:</dt>
+<dd>there&#8217;s a problem</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="favorite-streets">
+<h3><a class="toc-backref" href="#id5">Favorite Streets</a><a class="headerlink" href="#favorite-streets" title="Permalink to this headline">¶</a></h3>
+<p>Manage User favorite Street list.</p>
+<div class="section" id="add-street-to-favorites">
+<h4><a class="toc-backref" href="#id6">Add street to favorites</a><a class="headerlink" href="#add-street-to-favorites" title="Permalink to this headline">¶</a></h4>
+<p>Add a Street to User favorite list.</p>
+<dl class="post">
+<dt id="post--addFavStreet">
+<code class="descname">POST </code><code class="descname">/addFavStreet</code><a class="headerlink" href="#post--addFavStreet" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/addFavStreet</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">https://florence-clean-roads.herokuapp.com/</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json, text/javascript</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+  <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Street added to User list&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="kc">null</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userId</strong> &#8211; user id, received during login</li>
+<li><strong>streetId</strong> &#8211; street id, not Alia ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; <p>Response OK, check json &#8220;response.code&#8221; value</p>
+<dl class="docutils">
+<dt>If 0:</dt>
+<dd>response ok</dd>
+<dt>If 1:</dt>
+<dd>there&#8217;s a problem</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="favorite-streets-list">
+<h4><a class="toc-backref" href="#id7">Favorite streets list</a><a class="headerlink" href="#favorite-streets-list" title="Permalink to this headline">¶</a></h4>
+<p>Get User favorite Street list.</p>
+<dl class="post">
+<dt id="post--getFavStreet">
+<code class="descname">POST </code><code class="descname">/getFavStreet</code><a class="headerlink" href="#post--getFavStreet" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/getFavStreet</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">https://florence-clean-roads.herokuapp.com/</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json, text/javascript</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+  <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Street list&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;StreetList&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;Street&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;StreetId&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;StreetName&quot;</span><span class="p">:</span> <span class="s2">&quot;PIAZZA ALDO MORO&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;CityId&quot;</span><span class="p">:</span> <span class="mi">1</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nt">&quot;Street&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;StreetId&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;StreetName&quot;</span><span class="p">:</span> <span class="s2">&quot;PIAZZA ANTONIO GRAMSCI&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;CityId&quot;</span><span class="p">:</span> <span class="mi">1</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userId</strong> &#8211; user id, received during login</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; <p>Response OK, check json &#8220;response.code&#8221; value</p>
+<dl class="docutils">
+<dt>If 0:</dt>
+<dd>response ok</dd>
+<dt>If 1:</dt>
+<dd>there&#8217;s a problem</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="notifications">
+<h3><a class="toc-backref" href="#id8">Notifications</a><a class="headerlink" href="#notifications" title="Permalink to this headline">¶</a></h3>
+<p>Manage User notification settings.</p>
+<div class="section" id="save-notification-settings">
+<h4><a class="toc-backref" href="#id9">Save notification settings</a><a class="headerlink" href="#save-notification-settings" title="Permalink to this headline">¶</a></h4>
+<p>Set notification for a User.</p>
+<dl class="post">
+<dt id="post--setNotification">
+<code class="descname">POST </code><code class="descname">/setNotification</code><a class="headerlink" href="#post--setNotification" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/setNotification</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">https://florence-clean-roads.herokuapp.com/</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json, text/javascript</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+  <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Notification setted&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="kc">null</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userId</strong> &#8211; user id, received during login</li>
+<li><strong>notification</strong> &#8211; JSON containing notification settings</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; <p>Response OK, check json &#8220;response.code&#8221; value</p>
+<dl class="docutils">
+<dt>If 0:</dt>
+<dd>response ok</dd>
+<dt>If 1:</dt>
+<dd>there&#8217;s a problem</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-notification-settings">
+<h4><a class="toc-backref" href="#id10">Get notification settings</a><a class="headerlink" href="#get-notification-settings" title="Permalink to this headline">¶</a></h4>
+<p>Get notification JSON for a User.</p>
+<dl class="post">
+<dt id="post--getNotification">
+<code class="descname">POST </code><code class="descname">/getNotification</code><a class="headerlink" href="#post--getNotification" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/getNotification</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">https://florence-clean-roads.herokuapp.com/</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json, text/javascript</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+  <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Notification found&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;Notification&quot;</span><span class="p">:</span> <span class="s2">&quot;{}&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userId</strong> &#8211; user id, received during login</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; <p>Response OK, check json &#8220;response.code&#8221; value</p>
+<dl class="docutils">
+<dt>If 0:</dt>
+<dd>response ok</dd>
+<dt>If 1:</dt>
+<dd>there&#8217;s a problem</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="last-park">
+<h3><a class="toc-backref" href="#id11">Last Park</a><a class="headerlink" href="#last-park" title="Permalink to this headline">¶</a></h3>
+<p>Manage User coordinates about the last place where he left auto.</p>
+<div class="section" id="set-last-park">
+<h4><a class="toc-backref" href="#id12">Set last park</a><a class="headerlink" href="#set-last-park" title="Permalink to this headline">¶</a></h4>
+<p>Set last park coordinates.</p>
+<dl class="post">
+<dt id="post--setMyCar">
+<code class="descname">POST </code><code class="descname">/setMyCar</code><a class="headerlink" href="#post--setMyCar" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/setMyCar</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">https://florence-clean-roads.herokuapp.com/</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json, text/javascript</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+  <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Car position setted&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="kc">null</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userId</strong> &#8211; user id, received during login</li>
+<li><strong>carLat</strong> &#8211; latitude</li>
+<li><strong>carLon</strong> &#8211; longitude</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; <p>Response OK, check json &#8220;response.code&#8221; value</p>
+<dl class="docutils">
+<dt>If 0:</dt>
+<dd>response ok</dd>
+<dt>If 1:</dt>
+<dd>there&#8217;s a problem</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-last-park">
+<h4><a class="toc-backref" href="#id13">Get last park</a><a class="headerlink" href="#get-last-park" title="Permalink to this headline">¶</a></h4>
+<p>Get last park coordinates.</p>
+<dl class="post">
+<dt id="post--getMyCar">
+<code class="descname">POST </code><code class="descname">/getMyCar</code><a class="headerlink" href="#post--getMyCar" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/getMyCar</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">https://florence-clean-roads.herokuapp.com/</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json, text/javascript</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+  <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Car found&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;Position&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Lat&quot;</span><span class="p">:</span> <span class="mf">12.45678</span><span class="p">,</span>
+        <span class="nt">&quot;Long&quot;</span><span class="p">:</span> <span class="mf">34.56884</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>userId</strong> &#8211; user id, received during login</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; <p>Response OK, check json &#8220;response.code&#8221; value</p>
+<dl class="docutils">
+<dt>If 0:</dt>
+<dd>response ok</dd>
+<dt>If 1:</dt>
+<dd>there&#8217;s a problem</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="city-api">
+<h2><a class="toc-backref" href="#id14">City API</a><a class="headerlink" href="#city-api" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Tommaso Galati, Bruno Formato.
+      Last updated on Sep 25, 2017.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
