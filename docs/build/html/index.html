@@ -106,6 +106,7 @@
 <li><a class="reference internal" href="#ciy-list">Ciy list</a></li>
 <li><a class="reference internal" href="#street-list">Street list</a></li>
 <li><a class="reference internal" href="#stretch-list">Stretch list</a></li>
+<li><a class="reference internal" href="#find-similar-street">Find similar Street</a></li>
 <li><a class="reference internal" href="#street-cleaning-schedule">Street Cleaning schedule</a></li>
 <li><a class="reference internal" href="#stretch-cleaning-schedule">Stretch Cleaning schedule</a></li>
 </ul>
@@ -187,8 +188,9 @@
 <li><a class="reference internal" href="#ciy-list" id="id15">Ciy list</a></li>
 <li><a class="reference internal" href="#street-list" id="id16">Street list</a></li>
 <li><a class="reference internal" href="#stretch-list" id="id17">Stretch list</a></li>
-<li><a class="reference internal" href="#street-cleaning-schedule" id="id18">Street Cleaning schedule</a></li>
-<li><a class="reference internal" href="#stretch-cleaning-schedule" id="id19">Stretch Cleaning schedule</a></li>
+<li><a class="reference internal" href="#find-similar-street" id="id18">Find similar Street</a></li>
+<li><a class="reference internal" href="#street-cleaning-schedule" id="id19">Street Cleaning schedule</a></li>
+<li><a class="reference internal" href="#stretch-cleaning-schedule" id="id20">Stretch Cleaning schedule</a></li>
 </ul>
 </li>
 </ul>
@@ -853,8 +855,71 @@ Content-Type: application/json
 </dd></dl>
 
 </div>
+<div class="section" id="find-similar-street">
+<h3><a class="toc-backref" href="#id18">Find similar Street</a><a class="headerlink" href="#find-similar-street" title="Permalink to this headline">¶</a></h3>
+<p>Find a Street given its name and City. It performs a Levenshtein distance.
+Returns Street cleaning schedule if exists, or Stretch list if the Street contains any stretch.</p>
+<dl class="post">
+<dt id="post--findSimilarStreet">
+<code class="descname">POST </code><code class="descname">/findSimilarStreet</code><a class="headerlink" href="#post--findSimilarStreet" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/findSimilarStreet</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">https://florence-clean-roads.herokuapp.com/</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json, text/javascript</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+  <span class="nt">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Cleaning found&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;NextCleaningCalendar&quot;</span><span class="p">:</span> <span class="s2">&quot;java.util.GregorianCalendar[time=?,areFieldsSet=false,areAllFieldsSet=true,</span>
+<span class="s2">              lenient=true,zone=sun.util.calendar.ZoneInfo[id=\&quot;Europe/Rome\&quot;,offset=3600000,dstSavings=3600000,</span>
+<span class="s2">              useDaylight=true,transitions=169,lastRule=java.util.SimpleTimeZone[id=Europe/Rome,offset=3600000,</span>
+<span class="s2">              dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,</span>
+<span class="s2">              startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,</span>
+<span class="s2">              endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2017,MONTH=8,WEEK_OF_YEAR=39,</span>
+<span class="s2">              WEEK_OF_MONTH=3,DAY_OF_MONTH=21,DAY_OF_YEAR=264,DAY_OF_WEEK=5,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=6,</span>
+<span class="s2">              HOUR_OF_DAY=6,MINUTE=0,SECOND=13,MILLISECOND=177,ZONE_OFFSET=3600000,DST_OFFSET=3600000]&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;TextToShow&quot;</span><span class="p">:</span> <span class="s2">&quot;Ogni Giovedì pari del mese dalle 00.00 alle 06.00&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>cityName</strong> &#8211; city name, received from Google Maps API</li>
+<li><strong>streetName</strong> &#8211; street name, received from Google Maps API</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; <p>Response OK, check json &#8220;response.code&#8221; value</p>
+<dl class="docutils">
+<dt>If 0:</dt>
+<dd>response ok</dd>
+<dt>If 1:</dt>
+<dd>there&#8217;s a problem</dd>
+</dl>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="street-cleaning-schedule">
-<h3><a class="toc-backref" href="#id18">Street Cleaning schedule</a><a class="headerlink" href="#street-cleaning-schedule" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">Street Cleaning schedule</a><a class="headerlink" href="#street-cleaning-schedule" title="Permalink to this headline">¶</a></h3>
 <p>Get the cleaning schedule for a Street.
 If the Street contains one or more Stretches, the Stretches list is returned.</p>
 <dl class="post">
@@ -916,7 +981,7 @@ If the Street contains one or more Stretches, the Stretches list is returned.</p
 
 </div>
 <div class="section" id="stretch-cleaning-schedule">
-<h3><a class="toc-backref" href="#id19">Stretch Cleaning schedule</a><a class="headerlink" href="#stretch-cleaning-schedule" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">Stretch Cleaning schedule</a><a class="headerlink" href="#stretch-cleaning-schedule" title="Permalink to this headline">¶</a></h3>
 <p>Get the cleaning schedule for a Stretch.</p>
 <dl class="post">
 <dt id="post--getStretchCleaning">
@@ -990,7 +1055,7 @@ If the Street contains one or more Stretches, the Stretches list is returned.</p
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, Tommaso Galati, Bruno Formato.
-      Last updated on Sep 26, 2017.
+      Last updated on Sep 29, 2017.
 
     </p>
   </div>

@@ -532,10 +532,60 @@ If a Street does not contain any Stretch, an error message is given.
     :param streetId: street id, received calling the */getStreetList* method
     :statuscode 200: Response OK, check json "response.code" value
 
-                                If 0:
-                                    response ok
-                                If 1:
-                                    there's a problem
+                        If 0:
+                            response ok
+                        If 1:
+                            there's a problem
+
+Find similar Street
+^^^^^^^^^^^^^^^^^^^
+
+Find a Street given its name and City. It performs a Levenshtein distance.
+Returns Street cleaning schedule if exists, or Stretch list if the Street contains any stretch.
+
+.. http:post:: /findSimilarStreet
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /findSimilarStreet HTTP/1.1
+        Host: https://florence-clean-roads.herokuapp.com/
+        Accept: application/json, text/javascript
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        {
+          "response": {
+            "code": "0",
+            "message": "Cleaning found",
+            "data": {
+              "NextCleaningCalendar": "java.util.GregorianCalendar[time=?,areFieldsSet=false,areAllFieldsSet=true,
+                      lenient=true,zone=sun.util.calendar.ZoneInfo[id=\"Europe/Rome\",offset=3600000,dstSavings=3600000,
+                      useDaylight=true,transitions=169,lastRule=java.util.SimpleTimeZone[id=Europe/Rome,offset=3600000,
+                      dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,
+                      startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,
+                      endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2017,MONTH=8,WEEK_OF_YEAR=39,
+                      WEEK_OF_MONTH=3,DAY_OF_MONTH=21,DAY_OF_YEAR=264,DAY_OF_WEEK=5,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=6,
+                      HOUR_OF_DAY=6,MINUTE=0,SECOND=13,MILLISECOND=177,ZONE_OFFSET=3600000,DST_OFFSET=3600000]",
+              "TextToShow": "Ogni Giovedì pari del mese dalle 00.00 alle 06.00"
+            }
+          }
+        }
+
+    :param cityName: city name, received from Google Maps API
+    :param streetName: street name, received from Google Maps API
+    :statuscode 200: Response OK, check json "response.code" value
+
+                        If 0:
+                            response ok
+                        If 1:
+                            there's a problem
 
 Street Cleaning schedule
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -581,10 +631,10 @@ If the Street contains one or more Stretches, the Stretches list is returned.
     :param streetId: street id, received calling the */getStreetList* method
     :statuscode 200: Response OK, check json "response.code" value
 
-                                        If 0:
-                                            response ok
-                                        If 1:
-                                            there's a problem
+                        If 0:
+                            response ok
+                        If 1:
+                            there's a problem
 
 Stretch Cleaning schedule
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -629,11 +679,10 @@ Get the cleaning schedule for a Stretch.
     :param stretchId: stretch id, received calling the */getStretchList* method
     :statuscode 200: Response OK, check json "response.code" value
 
-                                                If 0:
-                                                    response ok
-                                                If 1:
-                                                    there's a problem
-
+                        If 0:
+                            response ok
+                        If 1:
+                            there's a problem
 
 
 
