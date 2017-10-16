@@ -146,6 +146,45 @@ Add a Street to User favorite list.
                         If 1:
                             there's a problem
 
+Remove street from favorites
+""""""""""""""""""""""""""""
+
+Add a Street to User favorite list.
+
+.. http:post:: /removeFavStreet
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /addFavStreet HTTP/1.1
+        Host: https://florence-clean-roads.herokuapp.com/
+        Accept: application/json, text/javascript
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        {
+          "response": {
+            "code": "0",
+            "message": "Street removed from User list",
+            "data": null
+          }
+        }
+
+    :param userId: user id, received during login
+    :param streetId: street id, not Alia ID
+    :statuscode 200: Response OK, check json "response.code" value
+
+                        If 0:
+                            response ok
+                        If 1:
+                            there's a problem
+
 Favorite streets list
 """""""""""""""""""""
 
@@ -565,14 +604,13 @@ Returns Street cleaning schedule if exists, or Stretch list if the Street contai
             "code": "0",
             "message": "Cleaning found",
             "data": {
-              "NextCleaningCalendar": "java.util.GregorianCalendar[time=?,areFieldsSet=false,areAllFieldsSet=true,
-                      lenient=true,zone=sun.util.calendar.ZoneInfo[id=\"Europe/Rome\",offset=3600000,dstSavings=3600000,
-                      useDaylight=true,transitions=169,lastRule=java.util.SimpleTimeZone[id=Europe/Rome,offset=3600000,
-                      dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,
-                      startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,
-                      endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2017,MONTH=8,WEEK_OF_YEAR=39,
-                      WEEK_OF_MONTH=3,DAY_OF_MONTH=21,DAY_OF_YEAR=264,DAY_OF_WEEK=5,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=6,
-                      HOUR_OF_DAY=6,MINUTE=0,SECOND=13,MILLISECOND=177,ZONE_OFFSET=3600000,DST_OFFSET=3600000]",
+              "NextCleaningCalendar": {
+                "Day": 25,
+                "Month": 9,
+                "Year": 2017,
+                "Hour": 16,
+                "Minute": 0
+              },
               "TextToShow": "Ogni Giovedì pari del mese dalle 00.00 alle 06.00"
             }
           }
@@ -615,14 +653,13 @@ If the Street contains one or more Stretches, the Stretches list is returned.
             "code": "0",
             "message": "Cleaning found",
             "data": {
-              "NextCleaningCalendar": "java.util.GregorianCalendar[time=?,areFieldsSet=false,areAllFieldsSet=true,
-                      lenient=true,zone=sun.util.calendar.ZoneInfo[id=\"Europe/Rome\",offset=3600000,dstSavings=3600000,
-                      useDaylight=true,transitions=169,lastRule=java.util.SimpleTimeZone[id=Europe/Rome,offset=3600000,
-                      dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,
-                      startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,
-                      endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2017,MONTH=8,WEEK_OF_YEAR=39,
-                      WEEK_OF_MONTH=3,DAY_OF_MONTH=21,DAY_OF_YEAR=264,DAY_OF_WEEK=5,DAY_OF_WEEK_IN_MONTH=3,AM_PM=0,HOUR=6,
-                      HOUR_OF_DAY=6,MINUTE=0,SECOND=13,MILLISECOND=177,ZONE_OFFSET=3600000,DST_OFFSET=3600000]",
+              "NextCleaningCalendar": {
+                "Day": 26,
+                "Month": 9,
+                "Year": 2017,
+                "Hour": 0,
+                "Minute": 0
+              },
               "TextToShow": "Ogni Giovedì pari del mese dalle 00.00 alle 06.00"
             }
           }
@@ -663,14 +700,13 @@ Get the cleaning schedule for a Stretch.
             "code": "0",
             "message": "Cleaning found",
             "data": {
-              "NextCleaningCalendar": "java.util.GregorianCalendar[time=?,areFieldsSet=false,areAllFieldsSet=true,
-                lenient=true,zone=sun.util.calendar.ZoneInfo[id=\"Europe/Rome\",offset=3600000,dstSavings=3600000,
-                useDaylight=true,transitions=169,lastRule=java.util.SimpleTimeZone[id=Europe/Rome,offset=3600000,
-                dstSavings=3600000,useDaylight=true,startYear=0,startMode=2,startMonth=2,startDay=-1,startDayOfWeek=1,
-                startTime=3600000,startTimeMode=2,endMode=2,endMonth=9,endDay=-1,endDayOfWeek=1,endTime=3600000,
-                endTimeMode=2]],firstDayOfWeek=2,minimalDaysInFirstWeek=4,ERA=1,YEAR=2017,MONTH=9,WEEK_OF_YEAR=41,
-                WEEK_OF_MONTH=1,DAY_OF_MONTH=3,DAY_OF_YEAR=276,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=1,AM_PM=0,HOUR=6,
-                HOUR_OF_DAY=6,MINUTE=0,SECOND=35,MILLISECOND=415,ZONE_OFFSET=3600000,DST_OFFSET=3600000]",
+              "NextCleaningCalendar": {
+                "Day": 29,
+                "Month": 8,
+                "Year": 2017,
+                "Hour": 12,
+                "Minute": 0
+              },
               "TextToShow": "Ogni Martedì pari del mese dalle 00.00 alle 06.00"
             }
           }
