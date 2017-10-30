@@ -660,7 +660,9 @@ If the Street contains one or more Stretches, the Stretches list is returned.
                 "Hour": 0,
                 "Minute": 0
               },
-              "TextToShow": "Ogni Giovedì pari del mese dalle 00.00 alle 06.00"
+              "TextToShow": "Ogni Giovedì pari del mese dalle 00.00 alle 06.00",
+              "StreetId": 2,
+              "StreetName": "BORGO LA CROCE"
             }
           }
         }
@@ -707,7 +709,9 @@ Get the cleaning schedule for a Stretch.
                 "Hour": 12,
                 "Minute": 0
               },
-              "TextToShow": "Ogni Martedì pari del mese dalle 00.00 alle 06.00"
+              "TextToShow": "Ogni Martedì pari del mese dalle 00.00 alle 06.00",
+              "StretchId": 2,
+              "StretchName": "DA S.GIUSEPPE A AGNOLO"
             }
           }
         }
